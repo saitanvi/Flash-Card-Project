@@ -35,7 +35,7 @@ public class FlashcardEditActivity extends AppCompatActivity {
 
         if (!question.isEmpty() && !answer.isEmpty()) {
             String flashcardId = flashcardRef.push().getKey();
-            Flashcard flashcard = new Flashcard(flashcardId, question, answer, false);
+            Flashcard flashcard = new Flashcard(flashcardId, question, answer , false);
             flashcardRef.child(flashcardId).setValue(flashcard)
                     .addOnSuccessListener(aVoid -> Toast.makeText(this, "Flashcard saved", Toast.LENGTH_SHORT).show())
                     .addOnFailureListener(e -> Toast.makeText(this, "Failed to save flashcard", Toast.LENGTH_SHORT).show());
